@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# to create an initial mapping
+from rango import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # map the basic URL to the index view
+    path('', views.index, name='index'),
 ]
