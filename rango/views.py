@@ -13,11 +13,15 @@ def index(request):
     # the first 5 objects in descending order of likes
     category_list = Category.objects.order_by('-likes')[:5]
 
+    # the top five most viewed pages
+    page_list = Page.objects.order_by('-views')[:5]
+
     # Construct a dictionary
 #   context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
     context_dict = {}
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
+    context_dict['pages'] = page_list
 
     # Return a rendered response
     return render(request, 'rango/index.html', context=context_dict)
