@@ -59,6 +59,8 @@ def show_category(request, category_name_slug):
     return render(request, 'rango/category.html', context=context_dict)
 
 
+# only registered users can do this
+@login_required
 def add_category(request):
     form = CategoryForm()
 
@@ -75,6 +77,7 @@ def add_category(request):
 
 
 # add a pages in specific category page
+@login_required
 def add_page(request, category_name_slug):
     # step1. get category and check if it does exist, if not, redirect to the index page
     try:
@@ -165,8 +168,8 @@ def user_login(request):
 
 @login_required
 def restricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")
-
+    # return HttpResponse("Since you're logged in, you can see this text!")
+    return render(request, 'rango/restricted.html')
 
 @login_required
 def user_logout(request):
