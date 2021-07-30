@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load rango_template_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +14,13 @@
 <body>
     <div>
         {% block body_block %}
+        {% endblock %}
+    </div>
+
+    <div>
+        <h3>Categories</h3>{# Different from the TwD book! #}
+        {% block sidebar_block %}
+            {% get_category_list category%}
         {% endblock %}
     </div>
 
