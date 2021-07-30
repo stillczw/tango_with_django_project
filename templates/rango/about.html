@@ -1,3 +1,24 @@
+{% extends 'rango/base.html' %}
+{#{% load static %}#}
+
+{% block title_block %}
+    About Rango
+{% endblock %}
+
+{% block body_block %}
+    <h1>Rango says...</h1>
+    <div>
+        here is the about page. <br />
+        <strong>This tutorial has been put together by Zhiwei_CHEN</strong><br />
+    </div>
+    <div>
+        <img src="{{ MEDIA_URL }}cat.jpg"
+             alt="Picture of a Cat" />
+    </div>
+{% endblock %}
+
+
+{% comment %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,4 +37,4 @@
              alt="Picture of a Cat" />
     </div>
 </body>
-</html>
+</html>{% endcomment %}
